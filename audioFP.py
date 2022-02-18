@@ -17,13 +17,13 @@ import matplotlib.pyplot as plt
 import hashlib as hl
 import numpy as np
 import chromaprint
-import tkinter
+#import tkinter
 
 
 
 #______________________________________________Main Code______________________________________#
 
-duration, fp_encoded = acoustid.fingerprint_file('Navigating [Mastered].ogg')
+duration, fp_encoded = acoustid.fingerprint_file('IPchain/Navigating [Mastered].ogg')
 fingerprint, version = chromaprint.decode_fingerprint(fp_encoded)
 print("fingerprint =", fingerprint)
 print("fingerprint is a type: ", type(fingerprint))

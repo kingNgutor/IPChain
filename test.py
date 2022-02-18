@@ -4,25 +4,37 @@
 
 #Blockchain integration layer
 
-#_______________________________Import_______________________________#
+#_______________________________Dependencies_______________________________#
 
-import multiprocessing as mp
+import ipfshttpclient
+import os
+import subprocess
+
+#________________________________Main Code__________________________________#
+
+print("Establishing connection to IPFS network...")
+subprocess.run("/home/cen10ium/code/IPchain/IPFSDaemon.sh")
+print("Opening IPFS Daemon...")
+
+'''
+def main():
+    # Connect to local node
+    try:
+        api = ipfshttpclient.connect('127.0.0.1', 5001)
+        print(api)
+    except ipfshttpclient.exceptions.ConnectionError as ce:
+        print(str(ce))
 
 
-def rice():
 
-    x=1
-    y = 0
-
-    while y < 2**64:
-        x += x**(2**y)
-    
-
-pool = mp.Pool(mp.cpu_count())
-results = [pool.apply(rice())]
-pool.close()
-
-print("x = ", x)    
+#if __name__ == '__main__':
+ #   main()
 
 
-    
+with ipfshttpclient.connect() as client:
+        print(client.version())  # These calls…
+        print(client.version())  # …will reuse their TCP connection
+
+
+
+'''    
